@@ -33,3 +33,18 @@ Host someinternalhost
 	ProxyCommand ssh -i ~/.ssh/nchernukha nchernukha@51.250.70.70 -W %h:%p
 	IdentityFile /home/nchernukha/.ssh/nchernukha
 ```
+
+Подключение к хосту во внутренней сети через VPN
+-----------
+```
+bastion_IP = 51.250.70.70
+someinternalhost_IP = 10.128.0.6
+```
+### Подключение к VPN-серверу Pritunl
+1. Установить OpenVPN Connect
+2. Создать профиль подключения, выполнив импорт файла cloud-bastion.ovpn
+3. Использовать для подключения учетную запись _test_
+
+### Конфигурация VPN-сервера Pritunl:
+1. Настройки доступны по [ссылке](https://51.250.70.70.sslip.io/) (соединение защищено сертификатом Let's Encrypt)
+2. Для входа использовать учетную запись _pritunl_
