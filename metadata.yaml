@@ -1,0 +1,17 @@
+#cloud-config
+users:
+  - name: nchernukha
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK0mqK6uVdfg8x90W9s3L1eei3wxF2LVIpj6lbTesE4e nchernukha
+
+runcmd:
+ - wget -q https://raw.githubusercontent.com/Otus-DevOps-2022-02/nikey176_infra/cloud-testapp/install_ruby.sh
+ - wget -q https://raw.githubusercontent.com/Otus-DevOps-2022-02/nikey176_infra/cloud-testapp/install_mongodb.sh
+ - wget -q https://raw.githubusercontent.com/Otus-DevOps-2022-02/nikey176_infra/cloud-testapp/deploy.sh
+ - bash install_ruby.sh
+ - bash install_mongodb.sh
+ - bash deploy.sh
+ 
