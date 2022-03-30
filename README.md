@@ -48,3 +48,21 @@ someinternalhost_IP = 10.128.0.6
 ### Конфигурация VPN-сервера Pritunl:
 1. Настройки доступны по [ссылке](https://51.250.70.70.sslip.io/) (соединение защищено сертификатом Let's Encrypt)
 2. Для входа использовать учетную запись _pritunl_
+
+Деплой тестового приложения
+-----------
+```
+testapp_IP = 51.250.70.70
+testapp_port = 9292
+```
+### Скрипт для создания инстанса
+```
+yc compute instance create \
+  --name reddit-app \
+  --hostname reddit-app \
+  --memory=4 \
+  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+  --network-interface subnet-name=infra-ru-central1-a,nat-ip-version=ipv4, nat-address=51.250.70.70 \
+  --metadata serial-port-enable=1 \
+  --metadata-from-file user-data=metadata.yaml
+```
