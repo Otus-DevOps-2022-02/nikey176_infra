@@ -66,3 +66,16 @@ yc compute instance create \
   --metadata serial-port-enable=1 \
   --metadata-from-file user-data=metadata.yaml
 ```
+
+Сборка образов VM при помощи Packer
+-----------
+1. Создать образ семейства reddit-full, выполнив команду:
+```
+# cd packer && packer build -var-file=variables.json ./immutable.json
+```
+2. Запустить скрипт по созданию ВМ на основе созданного образа
+```
+# cd config-scripts
+# ./create-reddit-vm.sh
+```
+3. После запуска ВМ приложение будет доступно по [ссылке](http://51.250.70.70:9292/)
