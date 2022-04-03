@@ -1,5 +1,5 @@
 {
-	"key_file": "/root/yandex-cloud/packer/key.json",
+	"key_file": "files/key.json",
 	"folder_id": "1234567890abcdefghij",
 	"source_image_id": "1234567890abcdefghij",
 	"subnet_id": "1234567890abcdefghij",
