@@ -34,6 +34,7 @@ Host someinternalhost
 	IdentityFile /home/nchernukha/.ssh/nchernukha
 ```
 
+
 Подключение к хосту во внутренней сети через VPN
 -----------
 ```
