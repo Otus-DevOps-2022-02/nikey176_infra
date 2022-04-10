@@ -29,3 +29,7 @@ variable "app_zone" {
   description = "Reddit App Zone"
   default     = "ru-central1-b"
 }
+variable "scale" {
+  description = "Number of instances"
+  default     = "1"
+}
