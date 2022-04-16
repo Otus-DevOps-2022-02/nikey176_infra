@@ -1,0 +1,23 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "service_account_key_file": "/root/keys/packer-service-key.json",
+            "folder_id": "b1gf67o53kg106nnl0fl",
+            "source_image_family": "ubuntu-1604-lts",
+            "image_name": "reddit-db-{{timestamp}}",
+            "image_family": "reddit-base",
+            "ssh_username": "ubuntu",
+            "platform_id": "standard-v1",
+			"subnet_id": "e9b1ohu3n8qmvjbs0k44",
+			"use_ipv4_nat": true
+        }
+    ],
+	"provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}
