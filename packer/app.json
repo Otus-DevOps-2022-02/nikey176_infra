@@ -2,7 +2,7 @@
     "builders": [
         {
             "type": "yandex",
-            "service_account_key_file": "/root/keys/packer-service-key.json",
+            "service_account_key_file": "files/packer-service-key.json",
             "folder_id": "b1gf67o53kg106nnl0fl",
             "source_image_family": "ubuntu-1604-lts",
             "image_name": "reddit-app-{{timestamp}}",
