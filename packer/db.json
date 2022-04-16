@@ -9,11 +9,11 @@
             "image_family": "reddit-base",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
-			"subnet_id": "e9b1ohu3n8qmvjbs0k44",
-			"use_ipv4_nat": true
+            "subnet_id": "e9b1ohu3n8qmvjbs0k44",
+            "use_ipv4_nat": true
         }
     ],
-	"provisioners": [
+    "provisioners": [
         {
             "type": "shell",
             "script": "scripts/install_mongodb.sh",
