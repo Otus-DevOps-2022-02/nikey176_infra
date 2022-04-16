@@ -101,3 +101,13 @@ yc compute instance create \
 `external_ip_load-balancer`
 5. Перейти по адресу:  
 `http://<external_ip_load-balancer>:9292`
+
+Конфигурация инфраструктуры Terraform с использованием модулей и использованием remote backend для хранения state-файла
+-----------
+### Структура проекта:
+
+1. ВМ с базой данных вынесена в модуль db
+2. ВМ с приложением вынесена в модуль app
+3. Настроена конфигурация для сред stage и prod
+4. Хранение state-файла настроено на backend в Yandex Object Storage
+5. В модули добавлены provisioner'ы для коннекта приложения и БД с разных ВМ
