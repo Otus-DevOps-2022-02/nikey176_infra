@@ -1,0 +1,42 @@
+{
+  "stage": {
+    "hosts": {
+      "app-stage": {
+        "ansible_host": "51.250.6.57"
+      },
+      "db-stage": {
+        "ansible_host": "51.250.12.218"
+      }
+    }
+  },
+  "prod": {
+    "hosts": {
+      "app-prod": {
+        "ansible_host": "51.250.71.170"
+      },
+      "db-prod": {
+        "ansible_host": "51.250.69.13"
+      }
+    }
+  },
+  "app": {
+    "hosts": {
+      "app-stage": {
+        "ansible_host": "51.250.6.57"
+      },
+      "app-prod": {
+        "ansible_host": "51.250.71.170"
+      }
+    }
+  },
+  "db": {
+    "hosts": {
+      "db-stage": {
+        "ansible_host": "51.250.12.218"
+      },
+      "db-prod": {
+        "ansible_host": "51.250.69.13"
+      }
+    }
+  }
+}
