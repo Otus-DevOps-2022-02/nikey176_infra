@@ -30,7 +30,7 @@ resource "yandex_compute_instance" "app" {
   }
 
   allow_stopping_for_update = true
-
+/* Закомментировано для ДЗ ansible-2
   connection {
     type  = "ssh"
     host  = self.network_interface.0.nat_ip_address
@@ -55,4 +55,5 @@ resource "yandex_compute_instance" "app" {
       "sudo systemctl restart puma.service"
     ]
   }
+*/
 }
