@@ -1,0 +1,14 @@
+---
+- name: Install Ruby for Packer
+  hosts: default
+  become: true
+  
+  tasks:
+  - name: Install packages
+    apt:
+      name: "{{ item }}"
+      update_cache: yes
+    loop:
+      - ruby-full
+      - ruby-bundler
+      - build-essential
