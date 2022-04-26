@@ -1,0 +1,26 @@
+{
+  "stage": {
+    "hosts": {
+      "app-stage": {
+        "ansible_host": "51.250.15.61"
+      },
+      "db-stage": {
+        "ansible_host": "51.250.15.149"
+      }
+    }
+  },
+  "app": {
+    "hosts": {
+      "app-stage": {
+        "ansible_host": "51.250.15.61"
+      }
+    }
+  },
+  "db": {
+    "hosts": {
+      "db-stage": {
+        "ansible_host": "51.250.15.149"
+      }
+    }
+  }
+}
