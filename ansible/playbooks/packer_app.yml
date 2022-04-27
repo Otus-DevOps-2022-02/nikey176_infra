@@ -2,7 +2,7 @@
 - name: Install Ruby for Packer
   hosts: default
   become: true
-  
+
   tasks:
   - name: Install packages
     apt:
