@@ -1,12 +1,12 @@
 ---
 - name: Deploy application
-  hosts: app-stage
+  hosts: app
   become: true
-  
+
   tasks:
   - name: Install git # Добавлено вне ДЗ, т.к. по условиям у нас отключены провижионеры, в т.ч. deploy.sh
     apt:
-      name: git      
+      name: git
 
   - name: Fetch the latest version of application code
     git:
@@ -19,8 +19,8 @@
     bundler:
       state: present
       chdir: /home/ubuntu/reddit # <-- В какой директории выполнить команду bundle
-  
-  handlers: # <-- Добавим блок handlers и задачу  
+
+  handlers: # <-- Добавим блок handlers и задачу
   - name: reload puma
     become: true
     systemd: name=puma state=restarted

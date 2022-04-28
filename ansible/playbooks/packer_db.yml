@@ -2,7 +2,7 @@
 - name: Install MongoDB for Packer
   hosts: default
   become: true
-  
+
   tasks:
   - name: Install https packages
     apt:

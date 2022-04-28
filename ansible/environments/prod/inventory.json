@@ -1,0 +1,26 @@
+{
+  "prod": {
+    "hosts": {
+      "app-prod": {
+        "ansible_host": "51.250.9.241"
+      },
+      "db-prod": {
+        "ansible_host": "51.250.4.119"
+      }
+    }
+  },
+  "app": {
+    "hosts": {
+      "app-prod": {
+        "ansible_host": "51.250.9.241"
+      }
+    }
+  },
+  "db": {
+    "hosts": {
+      "db-prod": {
+        "ansible_host": "51.250.4.119"
+      }
+    }
+  }
+}
