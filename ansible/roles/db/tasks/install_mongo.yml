@@ -1,0 +1,30 @@
+---
+- name: Install https packages
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  loop:
+    - apt-transport-https
+    - ca-certificates
+  tags: install
+- name: Import MongoDB public GPG Key
+  apt_key:
+    url: https://www.mongodb.org/static/pgp/server-4.2.asc
+  tags: install
+- name: Add MongoDB source
+  lineinfile:
+    line: "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse"
+    path: /etc/apt/sources.list.d/mongodb-org-4.2.list
+    create: yes
+  tags: install
+- name: Install MongoDB package
+  apt:
+    name: mongodb-org
+    update_cache: yes
+  tags: install
+- name: Start and enable MongoDB
+  systemd:
+    name: mongod.service
+    state: started
+    enabled: yes
+  tags: install
