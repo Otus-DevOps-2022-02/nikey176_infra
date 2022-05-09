@@ -17,7 +17,11 @@
         {
             "type": "ansible",
             "user": "ubuntu",
-            "playbook_file": "ansible/playbooks/packer_app.yml"
+            "playbook_file": "ansible/playbooks/packer_app.yml",
+            "ansible_env_vars": [
+                "ANSIBLE_ROLES_PATH=/srv/otus/nikey176_infra/ansible/roles",
+                "ANSIBLE_REMOTE_TMP=/tmp/.ansible-ubuntu/tmp"
+            ]
         }
     ]
 }
