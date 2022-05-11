@@ -1,0 +1,9 @@
+---
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  loop:
+    - ruby-full
+    - ruby-bundler
+    - build-essential
